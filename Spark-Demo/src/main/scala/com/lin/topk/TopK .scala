@@ -3,6 +3,7 @@ import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkContext._
 
+
  /**
   * 在安装有Spark的Linux机器上跑
   * 环境：CentOS
