@@ -1,0 +1,30 @@
+<assembly xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/assembly-1.0.0.xsd">
+	<id>package</id>
+	<formats>
+		<format>tar.gz</format>
+	</formats>
+	<includeBaseDirectory>true</includeBaseDirectory>
+	<fileSets>
+		<fileSet>
+			<directory>runtime/bin</directory>
+			<outputDirectory>bin</outputDirectory>
+			<fileMode>0750</fileMode>
+		</fileSet>
+		<fileSet>
+			<directory>target/resources</directory>
+			<outputDirectory>conf</outputDirectory>
+			<fileMode>0640</fileMode>
+		</fileSet>
+	</fileSets>
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>lib</outputDirectory>
+			<scope>runtime</scope>
+			<excludes>
+				<exclude>junit:*</exclude>
+				<exclude>spark-assembly-2.10:*</exclude>
+			</excludes>
+		</dependencySet>
+	</dependencySets>
+</assembly>

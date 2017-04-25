@@ -30,9 +30,9 @@ public class KafkaProducer {
 		int messageNo = 1000;
 		final int COUNT = 10000;
 
-		while (messageNo < COUNT) {
+		while (true) {
 			String key = String.valueOf(messageNo);
-			String data = "hello kafka message " + key;
+			String data = "INFO JobScheduler: Finished job streaming job 1493090727000 ms.0 from job set of time 1493090727000 ms" + key;
 			producer.send(new KeyedMessage<String, String>(TOPIC, key, data));
 			System.out.println(data);
 			messageNo++;
